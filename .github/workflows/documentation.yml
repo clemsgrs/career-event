@@ -37,6 +37,9 @@ jobs:
             pyproject.toml
             requirements.txt
 
+      - name: install module
+        run: pip install -e .
+
       - name: Set up build cache
         uses: actions/cache/restore@v4
         with:
