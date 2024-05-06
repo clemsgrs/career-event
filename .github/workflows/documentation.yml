@@ -5,7 +5,7 @@ on:
       - master
 
 env:
-  PYTHON_VERSION: 3.9.6
+  PYTHON_VERSION: 3.9.x
 
 permissions:
   contents: write
@@ -26,6 +26,7 @@ jobs:
             docs
             includes
             material/overrides
+            material/templates
             src/templates/partials/languages
 
       - name: Set up Python runtime
@@ -34,8 +35,10 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
           cache-dependency-path: |
-            pyproject.toml
             requirements.txt
+
+      - name: install module
+        run: pip install -e .
 
       - name: Set up build cache
         uses: actions/cache/restore@v4
