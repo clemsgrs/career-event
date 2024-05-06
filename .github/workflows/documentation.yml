@@ -27,6 +27,7 @@ jobs:
             includes
             material/overrides
             material/templates
+            material/plugins
             src/templates/partials/languages
 
       - name: Set up Python runtime
