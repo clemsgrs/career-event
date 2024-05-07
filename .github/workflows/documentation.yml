@@ -94,14 +94,34 @@ permissions:
   pages: write
 
 jobs:
-  deploy:
+  documentation:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Dummy Setup for Testing
-        run: echo "Setting up a minimal test"
+      - name: Set up Python runtime
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.9.x
+          cache: pip
+          cache-dependency-path: |
+            pyproject.toml
+            requirements.txt
+
+      - name: Install Python dependencies
+        run: |
+          pip install mkdocs-material
+          pip install .[recommended,git,imaging]
+
+      - name: Build documentation
+        run: mkdocs build --clean
+
+      - name: Upload to GitHub Pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: site/
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
