@@ -8,4 +8,6 @@ Feel free to reach out to: careerevent.ozi@radboudumc.nl
 * Aysel Gurbanova<br>
 * Janeri Froberg<br>
 * Ezgi Sengune<br>
-* Clément Grisi
+* Clément Grisi<br>
+* Jaimy<br>
+* Verena

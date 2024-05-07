@@ -1,5 +1,5 @@
 # Project information
-site_name: Radboudumc Career Event
+site_name: Career Event
 site_url: https://clemsgrs.github.io/career-event
 site_author: Clement Grisi
 site_description: 'Join us on <strong>November 1st</strong> for the Radboudumc Career Event 2024!'
@@ -10,6 +10,7 @@ copyright: Copyright &copy; 2024 Clement Grisi
 # Configuration
 theme:
   name: material
+  logo: assets/custom_white.png
   custom_dir: material/overrides
   features:
     - announce.dismiss
@@ -61,7 +62,7 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/ce.png
+  favicon: assets/custom_white.png
   icon:
     logo: logo
 
